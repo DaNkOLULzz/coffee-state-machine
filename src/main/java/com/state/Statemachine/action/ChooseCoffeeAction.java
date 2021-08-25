@@ -10,7 +10,7 @@ import org.springframework.statemachine.action.Action;
 public class ChooseCoffeeAction implements Action<CoffeeMachineState, CoffeeMachineEvent> {
     @Override
     public void execute(final StateContext<CoffeeMachineState, CoffeeMachineEvent> context) {
-        final String coffeeId = context.getExtendedState().get("COFFEE_ID", String.class);
+        final var coffeeId = context.getExtendedState().get("COFFEE_ID", String.class);
         log.info(String.format("The coffee with id %s was chosen.", coffeeId));
     }
 }
